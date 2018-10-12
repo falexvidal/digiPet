@@ -10,6 +10,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.3.0"
-  }
+    "lite-server": "^2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falexvidal/digiPet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/falexvidal/digiPet/issues"
+  },
+  "homepage": "https://github.com/falexvidal/digiPet#readme"
 }
