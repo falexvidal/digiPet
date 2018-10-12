@@ -41,7 +41,7 @@ function Tamogotchi(tamoName) {
         -10 items
     */
     this.tamaCompliments = [
-        "Hey, how are you?",
+        "Hey, how are you, Joe",
         "What's up?",
         "Hey, watch yourself, dude!",
         "Who's your daddy?",
@@ -142,20 +142,21 @@ an eat food command that will select a random food that will
 
 Tamagotchi.prototype.eatFood = function() {
   this.selectFood = this.tamaFoods[ Math.floor( Math.random() * tamaFoods.length ) ];
-  this.poisonRate = selectFood.foodPoison[0];
-  if(poisonRate > 0.5){
-    this.food -= 1;
+  this.poisonRate = selectFood.foodPoison;
+  let poisonChance = Math.random();
+  if(poisonRate > poisonChance){
+    this.food -= selectedFood.foodValue;
   }
   else{
-    this.food += 1;
+    this.food += selectFood.foodValue;
   };
 }
 
 // a command that takes in a mood and returns a phrase
 
 Tamagotchi.prototype.phraseMood = function() {
-  this.selectMood = moodSaying.filter( mood => mood.saying );
-  If( mood.saying == "angry" || mood.saying = "sad"  || mood.saying = "happy" || mood.saying = "joke"  ){
+  this.selectMood = moodSaying.filter( mood => mood.mood );
+  If( mood.mood == "angry" || mood.mood = "sad"  || mood.mood = "happy" || mood.mood = "joke"  ){
     let phrase = [ Math.floor( Math.random() * selectMood.length ) ];
     console.log( phrase.saying )
   }
@@ -165,7 +166,7 @@ Tamagotchi.prototype.phraseMood = function() {
     a command that takes in your name and returns you a compliment structured using template
 */
 
-Tamagotchi.prototype.returnCompliment = function() {
+Tamagotchi.prototype.returnCompliment = function( compName) {
   let cumpliment =this.tamaCompliments[Math.floor(Math.random()*this.tamaCompliments.length)];
   let updatedPhrase = compliment.replace(/tamagotchi/g, compName);
   console.log(updatedPhrase);
