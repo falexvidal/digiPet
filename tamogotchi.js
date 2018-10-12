@@ -164,3 +164,9 @@ Tamagotchi.prototype.phraseMood = function() {
 /*
     a command that takes in your name and returns you a compliment structured using template
 */
+
+Tamagotchi.prototype.returnCompliment = function() {
+  let cumpliment =this.tamaCompliments[Math.floor(Math.random()*this.tamaCompliments.length)];
+  let updatedPhrase = compliment.replace(/tamagotchi/g, compName);
+  console.log(updatedPhrase);
+}
